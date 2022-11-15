@@ -11,7 +11,6 @@ function App() {
         const j = Math.floor(Math.random() * (i + 1));
         [cardValues[i], cardValues[j]] = [cardValues[j], cardValues[i]];
     }
-    console.log(cardValues)
   }
 
   function checkFlipped(card){
@@ -46,10 +45,13 @@ function App() {
       }
     }
   }
+
   randomize()
   return (
-    <div className="App">
-      {cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))}
+    <div>
+      <div className = "card-grid">
+        {cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))}
+      </div>
     </div>
   );
 }

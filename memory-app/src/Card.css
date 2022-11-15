@@ -3,7 +3,8 @@
   background-color: lightblue;
   height: 100px;
   width: 75px;
-  border: solid 2px red;
+  border: solid 2px black;
+
 }
 
 .back {
@@ -12,4 +13,9 @@
   height: 100px;
   width: 75px;
   border: solid 2px red;
+}
+
+.cardText {
+  font-family: 'Lexend Deca', sans-serif;
+  text-align: center;
 }
