@@ -8,7 +8,7 @@ class Card extends React.Component {
 
   handleClick = () => {
     this.setState(state => ({isFlipped: !state.isFlipped}));
-    var Flip = this.props.function1(this.props);
+    var Flip = this.props.function1(this);
   }
 
   render() {
