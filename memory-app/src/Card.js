@@ -9,12 +9,18 @@ class Card extends React.Component {
       this.setState(state => ({isFlipped: !state.isFlipped}));
     }
 
-    this.state = {isFlipped: false, flipDown: flipDown}
+    const forceUpFunction = () => {
+      this.state.forceUp = true;
+    }
+
+    this.state = {isFlipped: false, forceUp: false, flipDown: flipDown, forceUpFunction: forceUpFunction}
   }
 
   handleClick = () => {
-    this.setState(state => ({isFlipped: !state.isFlipped}));
-    var Flip = this.props.function1(this);
+    if (this.state.forceUp == false){
+      this.setState(state => ({isFlipped: !state.isFlipped}));
+      var Flip = this.props.function1(this);
+    }
   }
 
   render() {

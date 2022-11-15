@@ -7,7 +7,6 @@ function App() {
 
   function checkFlipped(card){
     var props = card.props
-    console.log(props);
     if (selected_item == null){//Change Selection 1
       selected_item = card
     }else{//Change Selection 2
@@ -15,10 +14,11 @@ function App() {
         selected_item = null
         console.log("Set back null")
       }else{
-        console.log(props.cardText)
-        console.log(selected_item.props.cardText)
         if (props.cardText == selected_item.props.cardText){
           console.log("Match")
+          card.state.forceUpFunction()
+          selected_item.state.forceUpFunction()
+          selected_item = null
         }else{
           console.log("Mismatch")
           card.state.flipDown()
