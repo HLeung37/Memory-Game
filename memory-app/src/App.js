@@ -48,8 +48,11 @@ function App() {
 
   function createGame(){
     randomize()
+    const cardGrid = document.querySelector(".card-grid")
     const cards = cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))
-    console.log(cards);
+    for (var i = 0;i < cardValues.length;i++){
+      //cardGrid.appendChild(cards[i]);
+    }
   }
 
   function newGame(){
@@ -62,13 +65,15 @@ function App() {
     }
   }
 
-  createGame()
+
+  setInterval(createGame(),3000)
   return (
     <div>
+    <button className="newGame" onClick={newGame}>New Game</button>
       <div className = "card-grid">
         {cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))}
       </div>
-      <button className="newGame" onClick={newGame}>New Game</button>
+
     </div>
   );
 }
