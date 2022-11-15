@@ -46,6 +46,12 @@ function App() {
     }
   }
 
+  function createGame(){
+    randomize()
+    const cards = cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))
+    console.log(cards);
+  }
+
   function newGame(){
     console.log("clicked");
     const cardGrid = document.querySelector(".card-grid")
@@ -55,7 +61,8 @@ function App() {
       lastChild = cardGrid.lastElementChild
     }
   }
-  randomize()
+
+  createGame()
   return (
     <div>
       <div className = "card-grid">
