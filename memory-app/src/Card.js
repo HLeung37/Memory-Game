@@ -46,6 +46,7 @@ class Card extends React.Component {
       return (
         <div className = "back"
              onClick={this.handleClick}>
+             <img src = "../GenshinCardBack.png"></img>
         </div>
       );
 		}
