@@ -7,14 +7,32 @@ class Card extends React.Component {
     //this.state = {isFlipped: false}
 
     const flipDown = () => {
-      this.setState(state => ({isFlipped: !state.isFlipped}));
+      this.setState(state => ({isFlipped: false}));
     }
 
     const forceUpFunction = () => {
       this.state.forceUp = true;
     }
 
-    this.state = {isFlipped: false, forceUp: false, flipDown: flipDown, forceUpFunction: forceUpFunction}
+    const changeText = (text) => {
+      this.state.cardText = text;
+    }
+
+    const reset = () => {
+      this.state.forceUp = false
+      this.state.isFlipped = false
+    }
+
+    this.state = {isFlipped: false,
+      forceUp: false,
+      flipDown: flipDown,
+      forceUpFunction: forceUpFunction,
+      changeText: changeText,
+      cardText: this.props.cardText,
+      reset: reset
+    }
+
+    this.props.function2(this,this.props.id)
   }
 
   handleClick = () => {
@@ -33,7 +51,7 @@ class Card extends React.Component {
 		}
     return (
       <div className = "front"
-           onClick={this.handleClick}><p className = "cardText">{this.props.cardText}</p>
+           onClick={this.handleClick}><p className = "cardText">{this.state.cardText}</p>
       </div>
     );
   }

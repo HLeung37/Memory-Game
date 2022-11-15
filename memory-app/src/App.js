@@ -5,6 +5,7 @@ function App() {
   var cardValues = ["Card1", "Card2", "Card3", "Card4", "Card1", "Card2", "Card3", "Card4"];
   var selected_item = null;
   var cards = [];
+  var card_test = null;
   var debounce = false;
 
   function randomize(){
@@ -21,6 +22,7 @@ function App() {
       card.setState(state => ({isFlipped: !state.isFlipped}));
     }
     var props = card.props
+    var states = card.state
     if (selected_item == null){//Change Selection 1
       selected_item = card
     }else{//Change Selection 2
@@ -28,7 +30,7 @@ function App() {
         selected_item = null
         console.log("Set back null")
       }else{
-        if (props.cardText == selected_item.props.cardText){
+        if (states.cardText == selected_item.state.cardText){
           console.log("Match")
           card.state.forceUpFunction()
           selected_item.state.forceUpFunction()
@@ -46,37 +48,25 @@ function App() {
       }
     }
   }
-  randomize()
-  var cardList=cardValues.map((item,idx)=>{
-    return <Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>
-  })
 
-  function refreshList(){
-    cardList=cardValues.map((item,idx)=>{
-      return <Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>
-    })
-  }
-
-  function createGame(){
-    refreshList()
-    return cardList
+  function logCard(card,id){
+    cards[id] = card
   }
 
   function newGame(){
-    console.log("clicked");
-    const cardGrid = document.querySelector(".card-grid")
-    var lastChild = cardGrid.lastElementChild
-    while (lastChild){
-      cardGrid.removeChild(cardGrid.lastElementChild)
-      lastChild = cardGrid.lastElementChild
-    }
+    randomize()
+    cards.forEach((card, idx) => {
+      card.state.flipDown()
+      card.state.changeText(cardValues[idx])
+      card.state.reset()
+    });
   }
-
+  randomize()
   return (
     <div>
     <button className="newGame" onClick={newGame}>New Game</button>
       <div className = "card-grid">
-        {createGame()}
+        {cardValues.map((item,idx)=>(cards[idx] = <Card id={idx} key={idx} cardText={item} function1={checkFlipped} function2={logCard}/>))}
       </div>
 
     </div>
