@@ -2,9 +2,17 @@ import './App.css';
 import Card from './Card'
 
 function App() {
-  const cardValues = ["Card1", "Card2", "Card3", "Card4", "Card1", "Card2", "Card3", "Card4"];
+  var cardValues = ["Card1", "Card2", "Card3", "Card4", "Card1", "Card2", "Card3", "Card4"];
   var selected_item = null;
   var debounce = false
+
+  function randomize(){
+    for (var i = cardValues.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cardValues[i], cardValues[j]] = [cardValues[j], cardValues[i]];
+    }
+    console.log(cardValues)
+  }
 
   function checkFlipped(card){
     if (debounce == true){
@@ -38,7 +46,7 @@ function App() {
       }
     }
   }
-
+  randomize()
   return (
     <div className="App">
       {cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))}
