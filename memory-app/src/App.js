@@ -64,11 +64,10 @@ function App() {
   randomize()
   return (
     <div>
-    <button className="newGame" onClick={newGame}>New Game</button>
       <div className = "card-grid">
         {cardValues.map((item,idx)=>(cards[idx] = <Card id={idx} key={idx} cardText={item} function1={checkFlipped} function2={logCard}/>))}
       </div>
-
+      <button className="newGame" onClick={newGame}>New Game</button>
     </div>
   );
 }

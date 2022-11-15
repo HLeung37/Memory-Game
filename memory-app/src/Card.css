@@ -1,8 +1,8 @@
 .front {
   display: block;
   background-color: lightblue;
-  height: 100px;
-  width: 75px;
+  height: 400px;
+  width: 300px;
   border: solid 2px black;
 
 }
@@ -10,8 +10,8 @@
 .back {
   display: block;
   background-color: black;
-  height: 100px;
-  width: 75px;
+  height: 400px;
+  width: 300px;
   border: solid 2px white;
 }
 
