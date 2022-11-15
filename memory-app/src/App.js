@@ -9,6 +9,8 @@ function App() {
   function checkFlipped(card){
     if (debounce == true){
       return
+    }else{
+      card.setState(state => ({isFlipped: !state.isFlipped}));
     }
     var props = card.props
     if (selected_item == null){//Change Selection 1
