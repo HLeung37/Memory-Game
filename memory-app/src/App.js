@@ -4,8 +4,12 @@ import Card from './Card'
 function App() {
   const cardValues = ["Card1", "Card2", "Card3", "Card4", "Card1", "Card2", "Card3", "Card4"];
   var selected_item = null;
+  var debounce = false
 
   function checkFlipped(card){
+    if (debounce == true){
+      return
+    }
     var props = card.props
     if (selected_item == null){//Change Selection 1
       selected_item = card
@@ -21,9 +25,13 @@ function App() {
           selected_item = null
         }else{
           console.log("Mismatch")
-          card.state.flipDown()
-          selected_item.state.flipDown()
-          selected_item = null
+          debounce = true
+          const flipDownDelay = setTimeout(function(){
+            card.state.flipDown()
+            selected_item.state.flipDown()
+            selected_item = null
+            debounce = false
+          },1500)
         }
       }
     }
