@@ -35,6 +35,11 @@ class Card extends React.Component {
     this.props.function2(this,this.props.id)
   }
 
+  getImage = () => {
+    console.log("../"+this.state.cardText+".png")
+    return "../"+this.state.cardText+".png"
+  }
+
   handleClick = () => {
     if (this.state.forceUp == false){
       var Flip = this.props.function1(this);
@@ -52,7 +57,8 @@ class Card extends React.Component {
 		}
     return (
       <div className = "front"
-           onClick={this.handleClick}><p className = "cardText">{this.state.cardText}</p>
+           onClick={this.handleClick}>
+           <img className = "cardFront" src = {this.getImage()}></img>
       </div>
     );
   }
