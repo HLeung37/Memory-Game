@@ -7,17 +7,23 @@ function App() {
 
   function checkFlipped(card){
     var props = card.props
-    //console.log(props.id);
+    console.log(props);
     if (selected_item == null){//Change Selection 1
       selected_item = card
     }else{//Change Selection 2
       if (props.id == selected_item.props.id){
         selected_item = null
+        console.log("Set back null")
       }else{
-        if (props.cardName == selected_item.props.cardName){
+        console.log(props.cardText)
+        console.log(selected_item.props.cardText)
+        if (props.cardText == selected_item.props.cardText){
           console.log("Match")
         }else{
           console.log("Mismatch")
+          card.state.flipDown()
+          selected_item.state.flipDown()
+          selected_item = null
         }
       }
     }

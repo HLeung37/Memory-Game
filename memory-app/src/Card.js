@@ -3,7 +3,13 @@ import React from 'react';
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isFlipped: false}
+    //this.state = {isFlipped: false}
+
+    const flipDown = () => {
+      this.setState(state => ({isFlipped: !state.isFlipped}));
+    }
+
+    this.state = {isFlipped: false, flipDown: flipDown}
   }
 
   handleClick = () => {
