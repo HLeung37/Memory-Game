@@ -58,6 +58,8 @@ function App() {
 
   function newGame(){
     randomize()
+    currentTurn = 0;
+    document.querySelector(".turnsTaken").innerHTML = "Tries : " + currentTurn
     cards.forEach((card, idx) => {
       card.state.flipDown()
       card.state.changeText(cardValues[idx])
