@@ -2,7 +2,7 @@
   display: block;
   background-color: lightblue;
   height: 400px;
-  width: 300px;
+  width: 275px;
   border: solid 2px black;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -13,7 +13,7 @@
   display: block;
   background-color: black;
   height: 400px;
-  width: 300px;
+  width: 275px;
   border: solid 2px white;
   transition: transform 0.6s;
   transform-style: preserve-3d;

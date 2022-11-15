@@ -7,6 +7,7 @@ function App() {
   var cards = [];
   var card_test = null;
   var debounce = false;
+  var currentTurn = 0;
 
   function randomize(){
     for (var i = cardValues.length - 1; i > 0; i--) {
@@ -30,6 +31,8 @@ function App() {
         selected_item = null
         console.log("Set back null")
       }else{
+        currentTurn++;
+        document.querySelector(".turnsTaken").innerHTML = "Tries : " + currentTurn
         if (states.cardText == selected_item.state.cardText){
           console.log("Match")
           card.state.forceUpFunction()
@@ -68,6 +71,7 @@ function App() {
         {cardValues.map((item,idx)=>(cards[idx] = <Card id={idx} key={idx} cardText={item} function1={checkFlipped} function2={logCard}/>))}
       </div>
       <button className="newGame" onClick={newGame}>New Game</button>
+      <p className = "turnsTaken">Tries : 0</p>
     </div>
   );
 }
