@@ -42,6 +42,7 @@ class Card extends React.Component {
 
   handleClick = () => {
     if (this.state.forceUp == false){
+      console.log(this);
       var Flip = this.props.function1(this);
     }
   }
@@ -51,14 +52,14 @@ class Card extends React.Component {
       return (
         <div className = "back"
              onClick={this.handleClick}>
-             <img src = "../GenshinCardBack.png"></img>
+             <img src = "../GenshinCardBack.png" />
         </div>
       );
 		}
     return (
       <div className = "front"
            onClick={this.handleClick}>
-           <img className = "cardFront" src = {this.getImage()}></img>
+           <img className = "cardFront" src = {this.getImage()} />
       </div>
     );
   }
