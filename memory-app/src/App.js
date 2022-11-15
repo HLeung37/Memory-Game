@@ -3,21 +3,21 @@ import Card from './Card'
 
 function App() {
   const cardValues = ["Card1", "Card2", "Card3", "Card4", "Card1", "Card2", "Card3", "Card4"];
-  var selected_item_id = -1;
-  var selected_item_name = "";
+  var selected_item = null;
 
   function checkFlipped(card){
     var props = card.props
-    console.log(props.id);
-    if (selected_item_id < 0){//Change Selection 1
-      selected_item_id = props.id
-      selected_item_name = props.cardName
+    //console.log(props.id);
+    if (selected_item == null){//Change Selection 1
+      selected_item = card
     }else{//Change Selection 2
-      if (props.id == selected_item_id){
-        selected_item_id = -1
-        selected_item_name = ""
+      if (props.id == selected_item.props.id){
+        selected_item = null
+        console.log("Flip back")
       }else{
-
+        if (props.cardName == selected_item.props.cardName){
+          console.log("Same card")
+        }
       }
     }
   }
