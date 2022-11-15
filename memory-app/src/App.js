@@ -46,12 +46,22 @@ function App() {
     }
   }
 
+  function newGame(){
+    console.log("clicked");
+    const cardGrid = document.querySelector(".card-grid")
+    var lastChild = cardGrid.lastElementChild
+    while (lastChild){
+      cardGrid.removeChild(cardGrid.lastElementChild)
+      lastChild = cardGrid.lastElementChild
+    }
+  }
   randomize()
   return (
     <div>
       <div className = "card-grid">
         {cardValues.map((item,idx)=>(<Card id={idx} key={idx} cardText={item} function1={checkFlipped}/>))}
       </div>
+      <button className="newGame" onClick={newGame}>New Game</button>
     </div>
   );
 }
