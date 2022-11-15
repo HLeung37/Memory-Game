@@ -13,10 +13,11 @@ function App() {
     }else{//Change Selection 2
       if (props.id == selected_item.props.id){
         selected_item = null
-        console.log("Flip back")
       }else{
         if (props.cardName == selected_item.props.cardName){
-          console.log("Same card")
+          console.log("Match")
+        }else{
+          console.log("Mismatch")
         }
       }
     }
