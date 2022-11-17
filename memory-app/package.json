@@ -1,7 +1,7 @@
 {
   "name": "memory-app",
   "version": "0.1.0",
-  "homepage": "https://hleung37.github.io/Memory-Game/memory-app/public/index.html",
+  "homepage": "https://hleung37.github.io/Memory-Game/memory-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
