@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/HLeung37/Memory-Game.git/static/css/main.2caa35b3.css",
-    "main.js": "/HLeung37/Memory-Game.git/static/js/main.c5b003ef.js",
-    "static/js/787.006b5dea.chunk.js": "/HLeung37/Memory-Game.git/static/js/787.006b5dea.chunk.js",
-    "index.html": "/HLeung37/Memory-Game.git/index.html",
-    "main.2caa35b3.css.map": "/HLeung37/Memory-Game.git/static/css/main.2caa35b3.css.map",
-    "main.c5b003ef.js.map": "/HLeung37/Memory-Game.git/static/js/main.c5b003ef.js.map",
-    "787.006b5dea.chunk.js.map": "/HLeung37/Memory-Game.git/static/js/787.006b5dea.chunk.js.map"
+    "main.css": "/Memory-Game/static/css/main.2caa35b3.css",
+    "main.js": "/Memory-Game/static/js/main.70832c50.js",
+    "static/js/787.006b5dea.chunk.js": "/Memory-Game/static/js/787.006b5dea.chunk.js",
+    "index.html": "/Memory-Game/index.html",
+    "main.2caa35b3.css.map": "/Memory-Game/static/css/main.2caa35b3.css.map",
+    "main.70832c50.js.map": "/Memory-Game/static/js/main.70832c50.js.map",
+    "787.006b5dea.chunk.js.map": "/Memory-Game/static/js/787.006b5dea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2caa35b3.css",
-    "static/js/main.c5b003ef.js"
+    "static/js/main.70832c50.js"
   ]
 }
