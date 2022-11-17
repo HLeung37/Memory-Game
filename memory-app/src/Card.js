@@ -36,8 +36,8 @@ class Card extends React.Component {
   }
 
   getImage = () => {
-    console.log("../"+this.state.cardText+".png")
-    return "../"+this.state.cardText+".png"
+    console.log(this.state.cardText+".png")
+    return this.state.cardText+".png"
   }
 
   handleClick = () => {
@@ -52,7 +52,7 @@ class Card extends React.Component {
       return (
         <div className = "back"
              onClick={this.handleClick}>
-             <img src = "../GenshinCardBack.png" />
+             <img src = "GenshinCardBack.png" />
         </div>
       );
 		}
