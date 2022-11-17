@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HLeung37/HLeung37.github.io.git/static/css/main.2caa35b3.css",
+    "main.js": "/HLeung37/HLeung37.github.io.git/static/js/main.e242579d.js",
+    "static/js/787.006b5dea.chunk.js": "/HLeung37/HLeung37.github.io.git/static/js/787.006b5dea.chunk.js",
+    "index.html": "/HLeung37/HLeung37.github.io.git/index.html",
+    "main.2caa35b3.css.map": "/HLeung37/HLeung37.github.io.git/static/css/main.2caa35b3.css.map",
+    "main.e242579d.js.map": "/HLeung37/HLeung37.github.io.git/static/js/main.e242579d.js.map",
+    "787.006b5dea.chunk.js.map": "/HLeung37/HLeung37.github.io.git/static/js/787.006b5dea.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2caa35b3.css",
+    "static/js/main.e242579d.js"
+  ]
+}
